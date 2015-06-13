@@ -49,5 +49,8 @@ class ohmyzsh(
       ensure => present,
     }
   }
+  if (versioncmp($::puppetversion, '3') != -1) {
+    include 'ohmyzsh::users'
+  }
 
 }
