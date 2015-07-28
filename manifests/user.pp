@@ -1,19 +1,19 @@
 define ohmyzsh::user(
-  $name = undef,
+  $username = undef,
   $theme = undef,
   $plugins = undef,
   $autoupdate = undef
   ) {
-  if $name {
-    ohmyzsh::install { $name: }
+  if $username {
+    ohmyzsh::install { $username: }
     if $theme {
-      ohmyzsh::theme { [$name,]: theme => $theme }
+      ohmyzsh::theme { [$username,]: theme => $theme }
     }
     if $plugins {
-      ohmyzsh::plugins { $name: plugins => $plugins }
+      ohmyzsh::plugins { $username: plugins => $plugins }
     }
     if $autoupdate {
-      ohmyzsh::autoupdate { $name: autoupdate => $autoupdate }
+      ohmyzsh::autoupdate { $username: autoupdate => $autoupdate }
     }
   }
 }
