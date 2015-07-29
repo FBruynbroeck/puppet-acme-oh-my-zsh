@@ -1,9 +1,9 @@
 define ohmyzsh::autoupdate(
-  $autoupdate = true,
+  $autoupdate = 'true',
   $user = $username
 ) {
   if $user == 'root' { $home = '/root' } else { $home = "${ohmyzsh::params::home}/${user}" }
-  if $autoupdate == true { $disableautoupdate = 'false' } else { $disableautoupdate = 'true' }
+  if $autoupdate == 'true' { $disableautoupdate = 'false' } else { $disableautoupdate = 'true' }
   if $user {
     file_line { "${user}-autoupdate":
       path    => "${home}/.zshrc",
