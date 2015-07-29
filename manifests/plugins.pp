@@ -1,6 +1,6 @@
 define ohmyzsh::plugins(
   $plugins = 'git',
-  $user = $name
+  $user = $username
 ) {
   if $user == 'root' { $home = '/root' } else { $home = "${ohmyzsh::params::home}/${user}" }
   if $user {
