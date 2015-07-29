@@ -26,11 +26,11 @@
 # Copyright 2013 Leon Brocard
 #
 define ohmyzsh::upgrade() {
-  if $username == 'root' { $home = '/root' } else { $home = "${ohmyzsh::params::home}/${username}" }
-  exec { "ohmyzsh::git upgrade ${username}":
+  if $name == 'root' { $home = '/root' } else { $home = "${ohmyzsh::params::home}/${name}" }
+  exec { "ohmyzsh::git upgrade ${name}":
     command => '/usr/bin/git pull --rebase --stat origin master',
     cwd     => "${home}/.oh-my-zsh",
-    user    => $username,
+    user    => $name,
     require => [Package['git'], Package['zsh']]
   }
 }

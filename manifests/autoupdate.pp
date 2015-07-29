@@ -1,6 +1,6 @@
 define ohmyzsh::autoupdate(
   $autoupdate = 'true',
-  $user = $username
+  $user = $name
 ) {
   if $user == 'root' { $home = '/root' } else { $home = "${ohmyzsh::params::home}/${user}" }
   if $autoupdate == 'true' { $disableautoupdate = 'false' } else { $disableautoupdate = 'true' }

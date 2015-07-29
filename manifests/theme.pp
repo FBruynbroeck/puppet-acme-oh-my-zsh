@@ -1,6 +1,6 @@
 define ohmyzsh::theme(
   $theme = 'clean',
-  $user = $username
+  $user = $name
 ) {
   if $user == 'root' { $home = '/root' } else { $home = "${ohmyzsh::params::home}/${user}" }
   if $user {
