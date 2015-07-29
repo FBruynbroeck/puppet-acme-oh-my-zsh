@@ -12,7 +12,7 @@ define ohmyzsh::user(
     if $plugins {
       ohmyzsh::plugins { $username: plugins => $plugins }
     }
-    if $autoupdate {
+    if $autoupdate != undef {
       ohmyzsh::autoupdate { $username: autoupdate => $autoupdate }
     }
   }
